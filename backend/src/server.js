@@ -14,6 +14,25 @@ const app = express();
 // Connect to database
 connectDB();
 
+// Auto-seed database on first deploy
+const seedDatabase = async () => {
+  try {
+    const User = require('./models/User');
+    const userCount = await User.countDocuments();
+    
+    if (userCount === 0) {
+      console.log('Database is empty. Running seed script...');
+      require('./utils/seedData');
+    } else {
+      console.log('Database already has data. Skipping seed.');
+    }
+  } catch (error) {
+    console.error('Error checking database for seeding:', error.message);
+  }
+};
+
+seedDatabase();
+
 // Middleware
 app.use(cors());
 app.use(express.json());
