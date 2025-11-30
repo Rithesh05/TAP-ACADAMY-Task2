@@ -231,14 +231,6 @@ Data is automatically seeded when the backend starts for the first time.
 - Employee: Personal attendance overview
 - Manager: Team attendance analytics
 
-### Port Already in Use
-```bash
-# Windows - Kill process on port 3000
-taskkill /F /IM node.exe
-
-# Then restart the servers
-```
-
 ## Development
 
 ### Running Tests
