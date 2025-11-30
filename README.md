@@ -262,31 +262,31 @@ https://tap-acadamy-task2.vercel.app/login
 4. Submit a pull request
 
 ## Pictures
-Employee Homepage
+###Employee Homepage
 <img width="1889" height="864" alt="image" src="https://github.com/user-attachments/assets/7974017f-be2a-4dcd-84b6-f378258591c6" />
 
-Employee calender
+###Employee calender
 <img width="470" height="677" alt="image" src="https://github.com/user-attachments/assets/43674d06-5818-4187-a076-c04abced72c8" />
 
-Employee Profile
+###Employee Profile
 <img width="263" height="395" alt="image" src="https://github.com/user-attachments/assets/20acd2d5-b59f-4ee5-a21d-834d0717de75" />
 
-Sign Up
+###Sign Up
 <img width="508" height="826" alt="image" src="https://github.com/user-attachments/assets/6390e208-dfbe-4c78-b2a1-06be0c14de5d" />
 
-Manager Homepage
+###Manager Homepage
 <img width="1347" height="888" alt="image" src="https://github.com/user-attachments/assets/8cde1a50-4092-4efe-b16b-222a60ab6393" />
 
-Manager Homepage
+###Manager Homepage
 <img width="1285" height="850" alt="image" src="https://github.com/user-attachments/assets/b5914f18-2822-4257-8256-15636d7b0e32" />
 
-Manager Department wise Stats
+###Manager Department wise Stats
 <img width="543" height="802" alt="image" src="https://github.com/user-attachments/assets/8bbd4d07-aa79-4b4c-9fd0-b191290de135" />
 
-Manager Employee wise Stats
+###Manager Employee wise Stats
 <img width="534" height="861" alt="image" src="https://github.com/user-attachments/assets/081dcd28-4cbb-404b-a89d-ed8a57befca3" />
 
-Manager CSV Import Feature
+###Manager CSV Import Feature
 <img width="675" height="518" alt="image" src="https://github.com/user-attachments/assets/1f8cb68e-cc13-4825-8d4d-824958d1d5f5" />
 
 ## License
