@@ -21,24 +21,6 @@ A comprehensive full-stack attendance management application built with React, N
 - ✅ Export attendance reports
 - ✅ Manager dashboard with analytics
 
-## Tech Stack
-
-### Frontend
-- **React** - UI library
-- **Redux Toolkit** - State management
-- **React Router** - Navigation
-- **Tailwind CSS** - Styling
-- **Lucide React** - Icons
-- **Axios** - HTTP client
-
-### Backend
-- **Node.js** - Runtime environment
-- **Express.js** - Web framework
-- **MongoDB** - Database
-- **Mongoose** - ODM
-- **JWT** - Authentication
-- **bcryptjs** - Password hashing
-
 ## Project Structure
 
 ```
@@ -69,12 +51,6 @@ attendance-system/
 ```
 
 ## Setup Instructions
-
-### Prerequisites
-- **Node.js** (v14 or higher)
-- **npm** (v6 or higher)
-- **MongoDB** (local or Atlas)
-
 ### Step 1: Clone the Repository
 
 ```bash
@@ -85,14 +61,7 @@ cd "f:\projects\Attendance management TAP AC\attendance-system"
 
 ```bash
 cd backend
-
-# Install dependencies
 npm install
-
-# Create .env file (see Environment Variables section below)
-# Copy the .env.example or create .env with required variables
-
-# Start the backend server
 npm run dev
 ```
 
@@ -102,11 +71,7 @@ The backend will run on `http://localhost:5000`
 
 ```bash
 cd frontend
-
-# Install dependencies
 npm install
-
-# Start the frontend development server
 npm start
 ```
 
@@ -143,14 +108,6 @@ cd frontend
 npm run build
 ```
 
-This creates an optimized production build in the `build/` folder.
-
-**Backend:**
-```bash
-cd backend
-npm start
-```
-
 ## Environment Variables
 
 ### Backend (.env file)
@@ -174,16 +131,6 @@ JWT_EXPIRE=7d
 # CORS Configuration
 CORS_ORIGIN=http://localhost:3000
 ```
-
-### Frontend (.env file - Optional)
-
-Create a `.env` file in the `frontend/` directory:
-
-```env
-# API Configuration
-REACT_APP_API_URL=http://localhost:5000/api
-```
-
 ## Default Login Credentials
 
 ### Manager Account
@@ -284,23 +231,6 @@ Data is automatically seeded when the backend starts for the first time.
 - Employee: Personal attendance overview
 - Manager: Team attendance analytics
 
-## Troubleshooting
-
-### Backend Connection Issues
-1. Ensure MongoDB is running
-2. Check `MONGODB_URI` in `.env`
-3. Verify port 5000 is not in use
-4. Check backend logs for errors
-
-### Frontend Build Issues
-1. Clear node_modules: `rm -rf node_modules && npm install`
-2. Clear npm cache: `npm cache clean --force`
-3. Restart development server
-
-### CORS Errors
-1. Ensure `CORS_ORIGIN` in backend `.env` matches frontend URL
-2. Check that backend is running before starting frontend
-
 ### Port Already in Use
 ```bash
 # Windows - Kill process on port 3000
@@ -320,18 +250,14 @@ cd frontend
 npm test
 ```
 
-### Code Style
-- ESLint configured for both frontend and backend
-- Run linter: `npm run lint`
-
 ## Deployment
 
-### Frontend Deployment (Netlify/Vercel)
-1. Build the project: `npm run build`
-2. Deploy the `build/` folder
-3. Set environment variables in deployment platform
+### Frontend Deployment (Vercel)
+```bash
+https://tap-acadamy-task2.vercel.app/login
+```
 
-### Backend Deployment (Heroku/Railway)
+### Backend Deployment (Render)
 1. Set environment variables
 2. Deploy using platform's CLI or Git
 3. Ensure MongoDB Atlas is configured for production
@@ -345,27 +271,9 @@ npm test
 
 ## License
 
-This project is licensed under the MIT License.
+V.V Rithesh
 
-## Support
+## Details
+V.V Rithesh
+ritheshvellampalli05@gmail.com
 
-For issues or questions:
-1. Check the troubleshooting section
-2. Review API endpoint documentation
-3. Check backend logs for errors
-4. Verify environment variables are set correctly
-
-## Version History
-
-### v1.0.0
-- Initial release
-- Employee attendance tracking
-- Manager dashboard
-- Department-wise statistics
-- Member details page
-- Phone number field in profiles
-- Profile editing functionality
-
----
-
-**Last Updated:** November 30, 2025
