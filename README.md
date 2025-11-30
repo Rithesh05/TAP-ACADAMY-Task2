@@ -1,0 +1,371 @@
+# Attendance Management System
+
+A comprehensive full-stack attendance management application built with React, Node.js/Express, and MongoDB. This system allows managers to track employee attendance, view department statistics, and manage employee profiles with phone numbers.
+
+## Features
+
+### For Employees
+- ✅ Mark attendance (Check-in/Check-out)
+- ✅ View personal attendance history
+- ✅ Monthly attendance summary
+- ✅ Edit profile with phone number
+- ✅ View personal dashboard
+
+### For Managers
+- ✅ View all employees' attendance status
+- ✅ Department-wise statistics and filtering
+- ✅ Member details page with attendance history
+- ✅ Filter employees by status and department
+- ✅ View detailed attendance records for each employee
+- ✅ Edit profile with phone number
+- ✅ Export attendance reports
+- ✅ Manager dashboard with analytics
+
+## Tech Stack
+
+### Frontend
+- **React** - UI library
+- **Redux Toolkit** - State management
+- **React Router** - Navigation
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
+- **Axios** - HTTP client
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - Database
+- **Mongoose** - ODM
+- **JWT** - Authentication
+- **bcryptjs** - Password hashing
+
+## Project Structure
+
+```
+attendance-system/
+├── frontend/                    # React application
+│   ├── src/
+│   │   ├── pages/              # Page components
+│   │   │   ├── employee/       # Employee pages
+│   │   │   └── manager/        # Manager pages
+│   │   ├── services/           # API services
+│   │   ├── store/              # Redux store
+│   │   ├── components/         # Reusable components
+│   │   └── App.js              # Main app component
+│   └── package.json
+│
+├── backend/                     # Node.js/Express application
+│   ├── src/
+│   │   ├── controllers/        # Route controllers
+│   │   ├── models/             # Mongoose models
+│   │   ├── routes/             # API routes
+│   │   ├── middleware/         # Custom middleware
+│   │   ├── config/             # Configuration files
+│   │   └── server.js           # Server entry point
+│   ├── .env                    # Environment variables
+│   └── package.json
+│
+└── README.md                    # This file
+```
+
+## Setup Instructions
+
+### Prerequisites
+- **Node.js** (v14 or higher)
+- **npm** (v6 or higher)
+- **MongoDB** (local or Atlas)
+
+### Step 1: Clone the Repository
+
+```bash
+cd "f:\projects\Attendance management TAP AC\attendance-system"
+```
+
+### Step 2: Backend Setup
+
+```bash
+cd backend
+
+# Install dependencies
+npm install
+
+# Create .env file (see Environment Variables section below)
+# Copy the .env.example or create .env with required variables
+
+# Start the backend server
+npm run dev
+```
+
+The backend will run on `http://localhost:5000`
+
+### Step 3: Frontend Setup
+
+```bash
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start the frontend development server
+npm start
+```
+
+The frontend will run on `http://localhost:3000`
+
+### Step 4: Access the Application
+
+Open your browser and navigate to:
+```
+http://localhost:3000
+```
+
+## How to Run
+
+### Running Both Frontend and Backend
+
+**Terminal 1 - Backend:**
+```bash
+cd backend
+npm run dev
+```
+
+**Terminal 2 - Frontend:**
+```bash
+cd frontend
+npm start
+```
+
+### Production Build
+
+**Frontend:**
+```bash
+cd frontend
+npm run build
+```
+
+This creates an optimized production build in the `build/` folder.
+
+**Backend:**
+```bash
+cd backend
+npm start
+```
+
+## Environment Variables
+
+### Backend (.env file)
+
+Create a `.env` file in the `backend/` directory with the following variables:
+
+```env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+
+# Database Configuration
+MONGODB_URI=mongodb://localhost:27017/attendance-system
+# OR for MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/attendance-system
+
+# JWT Configuration
+JWT_SECRET=your_jwt_secret_key_here_change_this_in_production
+JWT_EXPIRE=7d
+
+# CORS Configuration
+CORS_ORIGIN=http://localhost:3000
+```
+
+### Frontend (.env file - Optional)
+
+Create a `.env` file in the `frontend/` directory:
+
+```env
+# API Configuration
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+## Default Login Credentials
+
+### Manager Account
+- **Email:** manager@example.com
+- **Password:** password123
+- **Role:** Manager
+- **Employee ID:** MGR001
+- **Department:** Management
+
+### Employee Accounts
+- **Alice Employee**
+  - Email: alice@example.com
+  - Password: password123
+  - Employee ID: EMP001
+  - Department: IT
+
+- **Bob Employee**
+  - Email: bob@example.com
+  - Password: password123
+  - Employee ID: EMP002
+  - Department: HR
+
+- **Carol Employee**
+  - Email: carol@example.com
+  - Password: password123
+  - Employee ID: EMP003
+  - Department: IT
+
+- **David Employee**
+  - Email: david@example.com
+  - Password: password123
+  - Employee ID: EMP004
+  - Department: Finance
+
+## Database Seeding
+
+The application comes with pre-seeded dummy data:
+- **2 months of attendance records** (1,680 records)
+- **5 users** (1 manager + 4 employees)
+- **Attendance distribution:**
+  - 70% Present
+  - 10% Late
+  - 10% Half-day
+  - 10% Absent
+
+Data is automatically seeded when the backend starts for the first time.
+
+## API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/me` - Get current user
+- `PUT /api/auth/profile` - Update user profile
+
+### Dashboard
+- `GET /api/dashboard/employee` - Employee dashboard
+- `GET /api/dashboard/manager` - Manager dashboard
+- `GET /api/dashboard/manager/department` - Manager department details
+
+### Attendance
+- `POST /api/attendance/checkin` - Check in
+- `POST /api/attendance/checkout` - Check out
+- `GET /api/attendance/today` - Today's status
+- `GET /api/attendance/my-history` - Personal history
+- `GET /api/attendance/my-summary` - Personal summary
+- `GET /api/attendance/all` - All attendance (manager)
+- `GET /api/attendance/member/:id` - Member details (manager)
+- `GET /api/attendance/employee/:id` - Employee attendance (manager)
+- `GET /api/attendance/summary` - Summary (manager)
+- `GET /api/attendance/today-status` - Today status all (manager)
+- `GET /api/attendance/export` - Export attendance (manager)
+
+## Features in Detail
+
+### My Department Page (Manager)
+- View all employees under supervision
+- Real-time attendance status (Present, Absent, Late, Half-day, Not Marked)
+- Department-wise statistics
+- Filter by department and status
+- Quick contact buttons (Call, Email)
+- Click "Details" to view member attendance history
+
+### Member Details Page (Manager)
+- Complete member information
+- Full attendance history
+- Attendance statistics
+- Filter by status with dates
+- Call and email buttons
+
+### Profile Management
+- View personal information
+- Edit name and phone number
+- Changes persist across the system
+- Phone number displayed everywhere
+
+### Dashboard
+- Employee: Personal attendance overview
+- Manager: Team attendance analytics
+
+## Troubleshooting
+
+### Backend Connection Issues
+1. Ensure MongoDB is running
+2. Check `MONGODB_URI` in `.env`
+3. Verify port 5000 is not in use
+4. Check backend logs for errors
+
+### Frontend Build Issues
+1. Clear node_modules: `rm -rf node_modules && npm install`
+2. Clear npm cache: `npm cache clean --force`
+3. Restart development server
+
+### CORS Errors
+1. Ensure `CORS_ORIGIN` in backend `.env` matches frontend URL
+2. Check that backend is running before starting frontend
+
+### Port Already in Use
+```bash
+# Windows - Kill process on port 3000
+taskkill /F /IM node.exe
+
+# Then restart the servers
+```
+
+## Development
+
+### Running Tests
+```bash
+cd backend
+npm test
+
+cd frontend
+npm test
+```
+
+### Code Style
+- ESLint configured for both frontend and backend
+- Run linter: `npm run lint`
+
+## Deployment
+
+### Frontend Deployment (Netlify/Vercel)
+1. Build the project: `npm run build`
+2. Deploy the `build/` folder
+3. Set environment variables in deployment platform
+
+### Backend Deployment (Heroku/Railway)
+1. Set environment variables
+2. Deploy using platform's CLI or Git
+3. Ensure MongoDB Atlas is configured for production
+
+## Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Test thoroughly
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For issues or questions:
+1. Check the troubleshooting section
+2. Review API endpoint documentation
+3. Check backend logs for errors
+4. Verify environment variables are set correctly
+
+## Version History
+
+### v1.0.0
+- Initial release
+- Employee attendance tracking
+- Manager dashboard
+- Department-wise statistics
+- Member details page
+- Phone number field in profiles
+- Profile editing functionality
+
+---
+
+**Last Updated:** November 30, 2025
