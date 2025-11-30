@@ -132,9 +132,11 @@ JWT_EXPIRE=7d
 CORS_ORIGIN=http://localhost:3000
 ```
 ## Dummy.env
+```env
 MONGODB_URI=mongodb://localhost:27017/attendance-system
 JWT_SECRET="TAP-AC"
 JWT_EXPIRE=7d
+```
 
 ## Default Login Credentials
 
