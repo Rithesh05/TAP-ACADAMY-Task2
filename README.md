@@ -54,7 +54,7 @@ attendance-system/
 ### Step 1: Clone the Repository
 
 ```bash
-cd "f:\projects\Attendance management TAP AC\attendance-system"
+cd "Attendance management TAP AC\attendance-system"
 ```
 
 ### Step 2: Backend Setup
@@ -131,6 +131,11 @@ JWT_EXPIRE=7d
 # CORS Configuration
 CORS_ORIGIN=http://localhost:3000
 ```
+## Dummy.env
+MONGODB_URI=mongodb://localhost:27017/attendance-system
+JWT_SECRET="TAP-AC"
+JWT_EXPIRE=7d
+
 ## Default Login Credentials
 
 ### Manager Account
